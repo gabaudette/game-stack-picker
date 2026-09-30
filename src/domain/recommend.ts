@@ -11,6 +11,7 @@ const scoreWeights = {
   pixel: 4,
   realistic: 9,
   experienced: 3,
+  codeFirst: 4,
 };
 const ALTERNATIVE_COUNT = 2;
 
@@ -43,6 +44,13 @@ function engineScore(engine: Tool, answers: Answers): number {
   if (answers.experience !== "beginner" && engine.id === "godot") {
     score += scoreWeights.experienced;
   }
+  if (
+    answers.experience === "advanced" &&
+    answers.team !== "studio" &&
+    engine.tags.includes("code-first")
+  ) {
+    score += scoreWeights.codeFirst;
+  }
   return score;
 }
 
@@ -53,6 +61,13 @@ const programming = new Map<string, string[]>([
   ["gamemaker", ["gml"]],
   ["gdevelop", ["events"]],
   ["phaser", ["typescript", "vscode"]],
+  ["bevy", ["rust", "vscode"]],
+  ["sfml", ["cpp", "vscode"]],
+  ["raylib", ["c", "vscode"]],
+  ["sdl3", ["c", "vscode"]],
+  ["love", ["lua", "vscode"]],
+  ["monogame", ["csharp", "vscode"]],
+  ["defold", ["lua"]],
 ]);
 const networking = new Map<string, string>([
   ["godot", "godot-multiplayer"],
@@ -64,6 +79,9 @@ const testing = new Map<string, string>([
   ["unity", "unity-test"],
   ["unreal", "unreal-automation"],
   ["phaser", "playwright"],
+  ["bevy", "cargo"],
+  ["sfml", "catch2"],
+  ["monogame", "dotnet-test"],
 ]);
 
 export function recommend(answers: Answers): Recommendation {
@@ -96,7 +114,7 @@ export function recommend(answers: Answers): Recommendation {
   };
   if (!engine) {
     notices.push(
-      "No verified engine fits all selected targets. Revisit your platforms or choose a preferred engine to inspect its limitations.",
+      "No verified engine or framework fits all selected targets. Revisit your platforms or choose a preferred engine to inspect its limitations.",
     );
     return { engine, alternatives, picks, reasons, notices };
   }
@@ -106,6 +124,14 @@ export function recommend(answers: Answers): Recommendation {
       "Your preferred engine. Review the compatibility notices before committing to its pipeline.";
   }
   add(engine.id, engineReason);
+  if (engine.note) {
+    notices.push(engine.note);
+  }
+  if (engine.kind === "library" || engine.kind === "framework") {
+    notices.push(
+      `${engine.name} is a ${engine.kind}. You own the project architecture and scene workflow; the suggested tools do not turn it into a full visual game editor.`,
+    );
+  }
   for (const id of programming.get(engine.id) ?? []) {
     add(id, `A programming tool used with ${engine.name}.`);
   }
@@ -124,8 +150,19 @@ export function recommend(answers: Answers): Recommendation {
     if (answers.budget !== "free" && answers.art === "realistic") {
       add("substance", "Optional specialist material authoring for realistic assets.");
     }
+  } else if (toolById.get("engine-animation")?.engines?.includes(engine.id)) {
+    add("engine-animation", "Start with your foundation’s built-in animation tools.");
   } else {
-    add("engine-animation", "Start with your engine’s built-in animation tools.");
+    add(
+      "krita-animation",
+      "Author 2D frames separately, then implement animation playback in your code-first runtime.",
+    );
+  }
+  if (answers.dimension === "2d" && engine.tags.includes("code-first")) {
+    add(
+      "tiled",
+      "Optional tile-map and object-layer authoring; select a compatible loader for your runtime.",
+    );
   }
   add("audacity", "Free recording and editing for sound effects.");
   if (answers.team === "studio" && answers.budget !== "free") {
@@ -168,6 +205,9 @@ export function recommend(answers: Answers): Recommendation {
   } else {
     add("trello", "A lightweight way to plan and track your next milestone.");
   }
+  if (engine.id === "sfml" || engine.id === "raylib" || engine.id === "sdl3") {
+    add("cmake", "Configure native library builds and generate a build system for your toolchain.");
+  }
   const testTool = testing.get(engine.id);
   if (testTool) {
     add(testTool, `Test your ${engine.name} project using an appropriate testing workflow.`);
@@ -186,8 +226,26 @@ export function recommend(answers: Answers): Recommendation {
     add("itch", "Publish a supported HTML5 build for browser players.");
   }
   if (answers.platforms.includes("mobile")) {
-    add("google-play", "Publish Android builds after meeting store requirements.");
-    add("app-store", "Publish iOS builds after meeting Apple’s developer and build requirements.");
+    if (!engine.platforms?.includes("mobile")) {
+      notices.push(
+        "No direct mobile route is verified for this foundation. Confirm a porting route before choosing mobile stores.",
+      );
+    } else {
+      const mobileTargets = engine.mobileTargets ?? ["android", "ios"];
+      if (mobileTargets.includes("android")) {
+        add("google-play", "Publish Android builds after meeting store requirements.");
+      }
+      if (mobileTargets.includes("ios")) {
+        add(
+          "app-store",
+          "Publish iOS builds after meeting Apple’s developer and build requirements.",
+        );
+      } else {
+        notices.push(
+          "The catalog verifies Android mobile builds for this foundation. An iOS publishing route is not verified.",
+        );
+      }
+    }
   }
   if (answers.platforms.includes("console")) {
     notices.push(

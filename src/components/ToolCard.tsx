@@ -37,6 +37,7 @@ export function ToolCard({
           <span className="select-indicator">{indicator}</span>
         </span>
         <span className="card-name">{tool.name}</span>
+        {tool.kind && <span className="foundation-kind">{tool.kind}</span>}
         <span className="card-description">{tool.description}</span>
       </button>
       <div className="card-footer">

@@ -41,5 +41,18 @@ Godot-related entries use the Godot icon from its official press kit; engine-spe
 | audacity | [Audacity official website](https://www.audacityteam.org/favicon.svg) | [Vendor](https://www.audacityteam.org/favicon.svg) |
 | photoshop | [SVGL](https://svgl.app/library/photoshop.svg) | [Vendor](https://www.adobe.com/legal/permissions.html) |
 | substance | [SVGL](https://svgl.app/library/substance-3d-painter.svg) | [Vendor](https://www.adobe.com/legal/permissions.html) |
+| rust | [SVGL](https://svgl.app/library/rust_dark.svg) | [Vendor](https://www.rust-lang.org/) |
+| lua | [SVGL](https://svgl.app/library/lua.svg) | [Vendor](https://lua.org/) |
+| c | [SVGL](https://svgl.app/library/c.svg) | [Vendor](https://en.wikipedia.org/wiki/C_(programming_language)) |
+| cargo | [SVGL](https://svgl.app/library/rust_dark.svg) | [Vendor](https://www.rust-lang.org/) |
+| bevy | [Bevy official repository](https://raw.githubusercontent.com/bevyengine/bevy/main/assets/branding/bevy_bird_dark.svg) | [Vendor](https://bevy.org/) |
+| defold | [Defold official website](https://defold.com/images/logo/defold/logo/logo-ver-outline-bright.svg) | [Vendor](https://defold.com/) |
+| ldtk | [LDtk official repository](https://raw.githubusercontent.com/deepnight/ldtk/master/art/logo/LDtk-vector-assets/LDtk-noSub.svg) | [Vendor](https://ldtk.io/) |
+| catch2 | [Catch2 official repository](https://raw.githubusercontent.com/catchorg/Catch2/devel/data/artwork/catch2-logo-full-with-background.svg) | [Vendor](https://github.com/catchorg/Catch2) |
+| renderdoc | [RenderDoc official website](https://renderdoc.org/fp/logo.svg) | [Vendor](https://renderdoc.org/) |
+| odin | [Odin official website repository](https://raw.githubusercontent.com/odin-lang/odin-lang.org/master/themes/odin/static/emblem.svg) | [Vendor](https://odin-lang.org/) |
+| sfml | [SFML official website repository](https://raw.githubusercontent.com/SFML/SFML-Website/master/pages/download/goodies/sfml-icon.svg) | [Vendor](https://www.sfml-dev.org/download/goodies/) |
+
+Bevy’s SVG has obsolete editor style properties removed. Cargo, Odin test, and .NET test share their language logos.
 
 Lucide interface icons are distributed under the [ISC license](https://github.com/lucide-icons/lucide/blob/main/LICENSE). DM Sans and Space Grotesk are served through Google Fonts under their respective SIL Open Font Licenses.
