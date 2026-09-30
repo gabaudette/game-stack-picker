@@ -32,9 +32,7 @@ export function App({ initialNotices }: { initialNotices: string[] }) {
       </a>
       <header className="site-header">
         <a className="brand" href="/" aria-label="Loadout home">
-          <span className="brand-mark">
-            <Gamepad2 />
-          </span>
+          <img className="brand-mark" src="/favicon.svg" alt="" width="35" height="35" />
           <span>
             loadout<span className="brand-dot">.</span>
           </span>
