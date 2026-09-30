@@ -45,7 +45,7 @@ export function RecommendationResults({
       </div>
       {result.alternatives.length > 0 && (
         <div className="alternatives">
-          <h3>Other engines worth exploring</h3>
+          <h3>Other foundations worth exploring</h3>
           <div>
             {result.alternatives.map((engine) => (
               <button

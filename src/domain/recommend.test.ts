@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { defaultAnswers } from "./answers";
 import { toolById, tools } from "./catalog";
-import { compatibilityWarnings } from "./compatibility";
+import { compatibilityWarnings, engineConflicts } from "./compatibility";
 import { recommend } from "./recommend";
 import type { Answers } from "./types";
 
@@ -76,9 +76,15 @@ describe("curated recommendations", () => {
       result.picks.some((id) => ["network", "backend"].includes(toolById.get(id)?.category ?? "")),
     ).toBe(false);
   });
-  it("explains when no cataloged engine supports all targets", () => {
+  it("finds a cross-platform foundation and explains console access", () => {
     const result = recommend(project({ dimension: "3d", platforms: ["web", "console"] }));
-    expect(result.engine?.id).toBe("unity");
+    expect(result.engine).toBeDefined();
+    if (!result.engine) {
+      throw new Error("A verified foundation should be available.");
+    }
+    expect(
+      engineConflicts(result.engine, project({ dimension: "3d", platforms: ["web", "console"] })),
+    ).toEqual([]);
     expect(result.notices.join(" ")).toContain("Console SDKs");
   });
   it("reports a missing preferred engine without silently choosing one", () => {

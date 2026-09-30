@@ -25,7 +25,7 @@ export const questions = [
     description: "We’ll tailor your asset pipeline to the look you’re after.",
   },
   {
-    title: "Have an engine in mind?",
+    title: "Have an engine or framework in mind?",
     description: "Keep your preference, or let the rules find a starting point.",
   },
 ];

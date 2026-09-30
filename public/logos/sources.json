@@ -196,5 +196,71 @@
     "source": "SVGL",
     "url": "https://svgl.app/library/substance-3d-painter.svg",
     "brand": "https://www.adobe.com/legal/permissions.html"
+  },
+  {
+    "id": "rust",
+    "source": "SVGL",
+    "url": "https://svgl.app/library/rust_dark.svg",
+    "brand": "https://www.rust-lang.org/"
+  },
+  {
+    "id": "lua",
+    "source": "SVGL",
+    "url": "https://svgl.app/library/lua.svg",
+    "brand": "https://lua.org/"
+  },
+  {
+    "id": "c",
+    "source": "SVGL",
+    "url": "https://svgl.app/library/c.svg",
+    "brand": "https://en.wikipedia.org/wiki/C_(programming_language)"
+  },
+  {
+    "id": "cargo",
+    "source": "SVGL",
+    "url": "https://svgl.app/library/rust_dark.svg",
+    "brand": "https://www.rust-lang.org/"
+  },
+  {
+    "id": "bevy",
+    "source": "Bevy official repository",
+    "url": "https://raw.githubusercontent.com/bevyengine/bevy/main/assets/branding/bevy_bird_dark.svg",
+    "brand": "https://bevy.org/"
+  },
+  {
+    "id": "defold",
+    "source": "Defold official website",
+    "url": "https://defold.com/images/logo/defold/logo/logo-ver-outline-bright.svg",
+    "brand": "https://defold.com/"
+  },
+  {
+    "id": "ldtk",
+    "source": "LDtk official repository",
+    "url": "https://raw.githubusercontent.com/deepnight/ldtk/master/art/logo/LDtk-vector-assets/LDtk-noSub.svg",
+    "brand": "https://ldtk.io/"
+  },
+  {
+    "id": "catch2",
+    "source": "Catch2 official repository",
+    "url": "https://raw.githubusercontent.com/catchorg/Catch2/devel/data/artwork/catch2-logo-full-with-background.svg",
+    "brand": "https://github.com/catchorg/Catch2"
+  },
+  {
+    "id": "renderdoc",
+    "source": "RenderDoc official website",
+    "url": "https://renderdoc.org/fp/logo.svg",
+    "brand": "https://renderdoc.org/"
+  },
+  {
+    "id": "odin",
+    "source": "Odin official website repository",
+    "url": "https://raw.githubusercontent.com/odin-lang/odin-lang.org/master/themes/odin/static/emblem.svg",
+    "brand": "https://odin-lang.org/"
+  },
+  {
+    "id": "sfml",
+    "source": "SFML official website repository",
+    "url": "https://raw.githubusercontent.com/SFML/SFML-Website/master/pages/download/goodies/sfml-icon.svg",
+    "brand": "https://www.sfml-dev.org/download/goodies/"
   }
 ]

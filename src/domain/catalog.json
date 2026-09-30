@@ -10,7 +10,8 @@
     "tags": ["2d", "3d", "pixel", "beginner"],
     "platforms": ["desktop", "web", "mobile"],
     "dimensions": ["2d", "3d"],
-    "note": "Console exports require third-party porting arrangements. Web export capabilities depend on the language and renderer."
+    "note": "Console exports require third-party porting arrangements. Web export capabilities depend on the language and renderer.",
+    "kind": "engine"
   },
   {
     "id": "unity",
@@ -23,7 +24,8 @@
     "tags": ["2d", "3d", "studio"],
     "platforms": ["desktop", "web", "mobile", "console"],
     "dimensions": ["2d", "3d"],
-    "note": "Eligibility and paid-tier requirements depend on current Unity terms. Console builds require approval and export access."
+    "note": "Eligibility and paid-tier requirements depend on current Unity terms. Console builds require approval and export access.",
+    "kind": "engine"
   },
   {
     "id": "unreal",
@@ -36,7 +38,8 @@
     "tags": ["3d", "studio", "realistic"],
     "platforms": ["desktop", "mobile", "console"],
     "dimensions": ["2d", "3d"],
-    "note": "No first-party HTML5 export is cataloged. Royalty obligations and console access depend on current terms."
+    "note": "No first-party HTML5 export is cataloged. Royalty obligations and console access depend on current terms.",
+    "kind": "engine"
   },
   {
     "id": "gamemaker",
@@ -49,7 +52,8 @@
     "tags": ["2d", "pixel", "beginner"],
     "platforms": ["desktop", "web", "mobile", "console"],
     "dimensions": ["2d"],
-    "note": "Commercial and console licenses have additional terms."
+    "note": "Commercial and console licenses have additional terms.",
+    "kind": "engine"
   },
   {
     "id": "gdevelop",
@@ -62,7 +66,8 @@
     "tags": ["2d", "beginner"],
     "platforms": ["desktop", "web", "mobile"],
     "dimensions": ["2d"],
-    "note": "This curated entry focuses on its established 2D workflow, rather than newer 3D capabilities."
+    "note": "This curated entry focuses on its established 2D workflow, rather than newer 3D capabilities.",
+    "kind": "engine"
   },
   {
     "id": "phaser",
@@ -75,7 +80,8 @@
     "tags": ["2d", "web", "pixel"],
     "platforms": ["web"],
     "dimensions": ["2d"],
-    "note": "Native mobile and desktop distribution require additional packaging; only direct browser support is cataloged."
+    "note": "Native mobile and desktop distribution require additional packaging; only direct browser support is cataloged.",
+    "kind": "framework"
   },
   {
     "id": "gdscript",
@@ -92,24 +98,25 @@
     "id": "csharp",
     "name": "C#",
     "category": "code",
-    "description": "A strongly typed language used for Unity scripting and Godot .NET projects.",
+    "description": "A strongly typed language for Unity, Godot .NET, and MonoGame projects.",
     "url": "https://learn.microsoft.com/en-us/dotnet/csharp/",
     "cost": "Free tooling",
     "free": true,
     "tags": ["scripting"],
-    "engines": ["unity", "godot"],
+    "engines": ["unity", "godot", "monogame"],
     "note": "Godot C# export support varies by target; verify its current platform limitations."
   },
   {
     "id": "cpp",
     "name": "C++",
     "category": "code",
-    "description": "Native systems and gameplay programming for Unreal projects.",
-    "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/programming-with-cplusplus-in-unreal-engine",
+    "description": "Native gameplay and systems programming for Unreal, SFML, and C-compatible libraries.",
+    "url": "https://isocpp.org/",
     "cost": "Free tooling",
     "free": true,
     "tags": ["programming"],
-    "engines": ["unreal"]
+    "engines": ["unreal", "sfml", "raylib", "sdl3"],
+    "note": "Unreal and SFML use C++ directly; raylib and SDL expose C APIs usable from C++."
   },
   {
     "id": "blueprints",
@@ -235,7 +242,8 @@
     "cost": "Included",
     "free": true,
     "tags": ["2d", "3d"],
-    "note": "Available capabilities vary by engine; this represents a workflow, not a separate product."
+    "note": "Available capabilities vary by engine; this represents a workflow, not a separate product.",
+    "engines": ["godot", "unity", "unreal", "gamemaker", "gdevelop", "phaser", "bevy", "defold"]
   },
   {
     "id": "spine",
@@ -559,5 +567,269 @@
     "free": false,
     "tags": ["mobile"],
     "platforms": ["mobile"]
+  },
+  {
+    "id": "bevy",
+    "name": "Bevy",
+    "category": "engine",
+    "kind": "engine",
+    "description": "A code-first Rust engine with ECS-based 2D and 3D workflows.",
+    "url": "https://bevy.org/",
+    "cost": "Open source",
+    "free": true,
+    "tags": ["2d", "3d", "code-first", "rust"],
+    "platforms": ["desktop", "web", "mobile"],
+    "dimensions": ["2d", "3d"],
+    "note": "A Rust and Cargo workflow. Verify renderer support, platform setup, and version migration requirements for your project."
+  },
+  {
+    "id": "sfml",
+    "name": "SFML",
+    "category": "engine",
+    "kind": "library",
+    "description": "A C++ multimedia library for 2D graphics, windows, audio, and input.",
+    "url": "https://www.sfml-dev.org/",
+    "cost": "Open source",
+    "free": true,
+    "tags": ["2d", "code-first", "cpp", "pixel"],
+    "platforms": ["desktop", "mobile"],
+    "dimensions": ["2d"],
+    "note": "A multimedia library, not a scene editor. Mobile support has additional setup and experimental caveats. Browser output and a complete 3D renderer are not verified here."
+  },
+  {
+    "id": "raylib",
+    "name": "raylib",
+    "category": "engine",
+    "kind": "library",
+    "description": "A small C library for programming 2D and 3D games, with many language bindings.",
+    "url": "https://www.raylib.com/",
+    "cost": "Open source",
+    "free": true,
+    "tags": ["2d", "3d", "code-first", "c", "odin", "pixel"],
+    "platforms": ["desktop", "web", "mobile"],
+    "mobileTargets": ["android"],
+    "dimensions": ["2d", "3d"],
+    "note": "Native C/C++ plus bindings such as Odin. Verified mobile output here is Android; iOS requires a separate porting route. Binding and browser-build support must be checked together."
+  },
+  {
+    "id": "sdl3",
+    "name": "SDL3",
+    "category": "engine",
+    "kind": "library",
+    "description": "Low-level C tooling for windows, input, audio, and a custom rendering pipeline.",
+    "url": "https://wiki.libsdl.org/SDL3/FrontPage",
+    "cost": "Open source",
+    "free": true,
+    "tags": ["2d", "code-first", "c"],
+    "platforms": ["desktop", "web", "mobile"],
+    "dimensions": ["2d"],
+    "note": "A foundation for your own engine, not a complete game editor. Browser builds use Emscripten; 3D requires a separate renderer. Additional SDL libraries handle fonts and image formats."
+  },
+  {
+    "id": "love",
+    "name": "LÖVE",
+    "category": "engine",
+    "kind": "framework",
+    "description": "A lightweight Lua framework for 2D games and rapid code-driven iteration.",
+    "url": "https://love2d.org/",
+    "cost": "Open source",
+    "free": true,
+    "tags": ["2d", "code-first", "lua", "pixel"],
+    "platforms": ["desktop", "mobile"],
+    "dimensions": ["2d"],
+    "note": "Write your game loop and integrations in Lua. Browser builds require a separate community runtime and are not cataloged as direct support."
+  },
+  {
+    "id": "monogame",
+    "name": "MonoGame",
+    "category": "engine",
+    "kind": "framework",
+    "description": "A C# game framework for custom 2D and 3D games with a content pipeline.",
+    "url": "https://monogame.net/",
+    "cost": "Open source",
+    "free": true,
+    "tags": ["2d", "3d", "code-first", "csharp", "pixel"],
+    "platforms": ["desktop", "mobile", "console"],
+    "dimensions": ["2d", "3d"],
+    "note": "A framework rather than a visual scene editor. Console packages require registered-developer access. Direct browser builds are not verified in this catalog."
+  },
+  {
+    "id": "defold",
+    "name": "Defold",
+    "category": "engine",
+    "kind": "engine",
+    "description": "A compact cross-platform engine with an editor and Lua gameplay scripting.",
+    "url": "https://defold.com/",
+    "cost": "Free · source available",
+    "free": true,
+    "tags": ["2d", "3d", "lua", "pixel"],
+    "platforms": ["desktop", "web", "mobile", "console"],
+    "dimensions": ["2d", "3d"],
+    "note": "Uses the Defold license rather than an OSI open-source license. Console access has approval and platform-specific terms; verify the target and asset workflow."
+  },
+  {
+    "id": "rust",
+    "name": "Rust",
+    "category": "code",
+    "description": "A systems language for Bevy gameplay and memory-safe native tooling.",
+    "url": "https://www.rust-lang.org/",
+    "cost": "Open source",
+    "free": true,
+    "tags": ["programming", "rust", "code-first"],
+    "engines": ["bevy"],
+    "note": "Bevy uses Rust directly. Other game-library bindings have their own integration and platform support."
+  },
+  {
+    "id": "c",
+    "name": "C",
+    "category": "code",
+    "description": "Native programming for raylib, SDL3, and custom game engines.",
+    "url": "https://gcc.gnu.org/",
+    "cost": "Free tooling",
+    "free": true,
+    "tags": ["programming", "c", "code-first"],
+    "engines": ["raylib", "sdl3"]
+  },
+  {
+    "id": "odin",
+    "name": "Odin",
+    "category": "code",
+    "description": "A data-oriented systems language with bundled raylib and SDL bindings.",
+    "url": "https://odin-lang.org/",
+    "cost": "Open source",
+    "free": true,
+    "tags": ["programming", "odin", "code-first"],
+    "engines": ["raylib", "sdl3"],
+    "note": "Odin ships vendor bindings for raylib and SDL3. Confirm the binding version, linking setup, and cross-compilation route for your targets."
+  },
+  {
+    "id": "lua",
+    "name": "Lua",
+    "category": "code",
+    "description": "A lightweight scripting language used by LÖVE and Defold.",
+    "url": "https://www.lua.org/",
+    "cost": "Open source",
+    "free": true,
+    "tags": ["scripting", "lua"],
+    "engines": ["love", "defold"]
+  },
+  {
+    "id": "tiled",
+    "name": "Tiled",
+    "category": "art",
+    "description": "Build tile maps and object layers in a flexible 2D level editor.",
+    "url": "https://www.mapeditor.org/",
+    "cost": "Open source",
+    "free": true,
+    "tags": ["2d", "pixel", "levels"],
+    "optional": true,
+    "note": "Choose a loader or importer matching your engine and exported map format."
+  },
+  {
+    "id": "ldtk",
+    "name": "LDtk",
+    "category": "art",
+    "description": "A focused 2D level editor with auto-tiling and entity-oriented workflows.",
+    "url": "https://ldtk.io/",
+    "cost": "Open source",
+    "free": true,
+    "tags": ["2d", "pixel", "levels"],
+    "optional": true,
+    "note": "JSON output needs a compatible importer or a custom loading implementation."
+  },
+  {
+    "id": "krita-animation",
+    "name": "Krita animation",
+    "category": "animation",
+    "description": "Author frame-by-frame 2D animation and export assets for your runtime.",
+    "url": "https://docs.krita.org/en/user_manual/animation.html",
+    "cost": "Open source",
+    "free": true,
+    "tags": ["2d", "illustrated", "pixel"],
+    "note": "Animation authoring is separate from runtime sprite playback. Export and load frames using your chosen library or framework."
+  },
+  {
+    "id": "cargo",
+    "name": "Cargo",
+    "category": "testing",
+    "description": "Build Rust projects, resolve packages, and run Rust unit and integration tests.",
+    "url": "https://doc.rust-lang.org/cargo/",
+    "cost": "Included with Rust",
+    "free": true,
+    "tags": ["builds", "testing", "rust"],
+    "engines": ["bevy"],
+    "note": "Cargo tests cover Rust logic; graphics and platform integration still need suitable runtime tests."
+  },
+  {
+    "id": "cmake",
+    "name": "CMake",
+    "category": "testing",
+    "description": "Configure and generate native C and C++ build systems.",
+    "url": "https://cmake.org/",
+    "cost": "Open source",
+    "free": true,
+    "tags": ["builds", "c", "cpp"],
+    "engines": ["sfml", "raylib", "sdl3"]
+  },
+  {
+    "id": "catch2",
+    "name": "Catch2",
+    "category": "testing",
+    "description": "A native C++ framework for unit tests and gameplay-logic checks.",
+    "url": "https://github.com/catchorg/Catch2",
+    "cost": "Open source",
+    "free": true,
+    "tags": ["testing", "cpp"],
+    "engines": ["sfml", "raylib", "sdl3"],
+    "optional": true,
+    "note": "Requires a C++ test target. A C or Odin game does not directly use Catch2 without a C++ bridge."
+  },
+  {
+    "id": "dotnet-test",
+    "name": ".NET testing",
+    "category": "testing",
+    "description": "Run C# gameplay-logic tests using dotnet test and a selected test framework.",
+    "url": "https://learn.microsoft.com/en-us/dotnet/core/testing/",
+    "cost": "Free tooling",
+    "free": true,
+    "tags": ["testing", "csharp"],
+    "engines": ["monogame", "unity", "godot"],
+    "note": "Choose a compatible test framework. Engine lifecycle and rendering checks need additional runtime coverage."
+  },
+  {
+    "id": "odin-test",
+    "name": "Odin testing",
+    "category": "testing",
+    "description": "Run Odin test procedures through the compiler’s test command.",
+    "url": "https://pkg.odin-lang.org/core/testing/",
+    "cost": "Included with Odin",
+    "free": true,
+    "tags": ["testing", "odin"],
+    "engines": ["raylib", "sdl3"],
+    "note": "Tests use Odin procedures and core:testing; no C++ test framework is required."
+  },
+  {
+    "id": "renderdoc",
+    "name": "RenderDoc",
+    "category": "testing",
+    "description": "Inspect supported native graphics API frame captures and rendering state.",
+    "url": "https://github.com/baldurk/renderdoc",
+    "cost": "Open source",
+    "free": true,
+    "tags": ["profiling", "graphics"],
+    "optional": true,
+    "note": "Check the graphics API and host platform first; this is not a universal browser or Metal graphics debugger."
+  },
+  {
+    "id": "tracy",
+    "name": "Tracy",
+    "category": "testing",
+    "description": "Instrument CPU work, allocations, and supported GPU workloads for profiling.",
+    "url": "https://github.com/wolfpld/tracy",
+    "cost": "Open source",
+    "free": true,
+    "tags": ["profiling", "native"],
+    "optional": true,
+    "note": "Requires instrumentation and an integration matching your language, engine, and target."
   }
 ]

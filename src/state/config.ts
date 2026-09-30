@@ -81,7 +81,7 @@ export function decodeConfig(raw: RawConfig): Decoded {
     }
     if (tool.category === "engine") {
       if (hasEngine) {
-        notices.push("Multiple engines were supplied. Only the first engine was kept.");
+        notices.push("Multiple engines were supplied. Only the first foundation was kept.");
         continue;
       }
       hasEngine = true;

@@ -9,6 +9,7 @@ export function ToolDetails({ tool, onClose }: { tool: Tool; onClose: () => void
       <div className="detail-logo">
         <Logo id={tool.id} name={tool.name} />
       </div>
+      {tool.kind && <p className="detail-kind">{tool.kind}</p>}
       <p>{tool.description}</p>
       <p className="detail-cost">{tool.cost}</p>
       {tool.note && <p className="notice">{tool.note}</p>}
