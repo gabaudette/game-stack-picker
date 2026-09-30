@@ -9,5 +9,6 @@
       "source": "/((?!assets/|logos/|favicon.svg).*)",
       "destination": "/index.html"
     }
-  ]
+  ],
+  "ignoreCommand": "if [ \"$VERCEL_ENV\" = \"production\" ] && [ \"$VERCEL_GIT_COMMIT_REF\" != \"main\" ]; then exit 0; fi; test ! -f package.json"
 }

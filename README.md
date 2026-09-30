@@ -64,6 +64,6 @@ Create an issue before starting a task. Work on an issue branch and submit a PR 
 
 The project is linked to `gabriel-audettes-projects/game-stack-picker`. Production tracks `main`; development branches use preview deployments. Keep application changes off `main` until the release PR is reviewed.
 
-`vercel.json` specifies Bun installation, `bun run build`, the `dist` output, and SPA rewrites. Node.js 24 is configured on the Vercel project. The project skips builds for bootstrap branches without `package.json`; application branches build normally. A local preview can be published with `vercel deploy --yes`; do not use `--prod` on an unreviewed branch. The Vercel CLI manages its credentials outside this repository. Generated `.env.local` and `.vercel` metadata are ignored; environment files are excluded from uploads.
+`vercel.json` specifies Bun installation, `bun run build`, the `dist` output, and SPA rewrites. Node.js 24 is configured on the Vercel project. The project skips bootstrap branches without `package.json` and rejects production builds from any Git branch other than `main`. Preview builds run normally. This guard is configured both in the project settings and `vercel.json`. A local preview can be published with `vercel deploy --yes`; do not use `--prod` on an unreviewed branch. The Vercel CLI manages its credentials outside this repository. Generated `.env.local` and `.vercel` metadata are ignored; environment files are excluded from uploads.
 
 No accounts, backend, analytics, or paid model APIs are used.
