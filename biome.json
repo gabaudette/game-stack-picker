@@ -1,0 +1,58 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.5.10/schema.json",
+  "formatter": { "enabled": true, "indentStyle": "space", "indentWidth": 2, "lineWidth": 100 },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "preset": "recommended",
+      "a11y": {
+        "useKeyWithClickEvents": "off",
+        "noStaticElementInteractions": "off",
+        "noLabelWithoutControl": "off",
+        "noSvgWithoutTitle": "off"
+      },
+      "complexity": { "noForEach": "error" },
+      "style": {
+        "useBlockStatements": "error",
+        "noYodaExpression": "error",
+        "noSubstr": "error",
+        "noMagicNumbers": "error",
+        "noTernary": "error",
+        "noEnum": "error",
+        "useNumericSeparators": "error"
+      },
+      "suspicious": { "noConsole": "error", "noExplicitAny": "error" }
+    }
+  },
+  "javascript": {
+    "formatter": { "quoteStyle": "double", "trailingCommas": "all", "semicolons": "always" }
+  },
+  "css": { "parser": { "tailwindDirectives": true } },
+  "assist": { "enabled": true, "actions": { "source": { "organizeImports": "on" } } },
+  "overrides": [
+    {
+      "includes": ["web/src/canvas/**"],
+      "linter": { "rules": { "style": { "noMagicNumbers": "off", "noTernary": "off" } } }
+    },
+    {
+      "includes": ["auth/src/db/migrate.ts", "auth/src/db/backfill-usernames.ts"],
+      "linter": { "rules": { "suspicious": { "noConsole": "off" } } }
+    }
+  ],
+  "files": {
+    "includes": [
+      "**",
+      "!**/dist",
+      "!**/coverage",
+      "!game-server",
+      "!web/src/components/base",
+      "!web/src/components/foundations",
+      "!web/src/components/shared-assets",
+      "!web/src/hooks",
+      "!web/src/providers",
+      "!web/src/utils",
+      "!web/src/styles",
+      "!auth/drizzle"
+    ]
+  }
+}

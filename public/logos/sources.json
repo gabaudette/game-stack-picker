@@ -1,0 +1,200 @@
+[
+  {
+    "id": "unity",
+    "source": "SVGL",
+    "url": "https://svgl.app/library/unity_dark.svg",
+    "brand": "https://unity.com/"
+  },
+  {
+    "id": "unreal",
+    "source": "SVGL",
+    "url": "https://svgl.app/library/unreal_engine_dark.svg",
+    "brand": "https://www.unrealengine.com/"
+  },
+  {
+    "id": "csharp",
+    "source": "SVGL",
+    "url": "https://svgl.app/library/csharp.svg",
+    "brand": "https://dotnet.microsoft.com/languages/csharp"
+  },
+  {
+    "id": "cpp",
+    "source": "SVGL",
+    "url": "https://svgl.app/library/c-plusplus.svg",
+    "brand": "https://en.wikipedia.org/wiki/C%2B%2B"
+  },
+  {
+    "id": "typescript",
+    "source": "SVGL",
+    "url": "https://svgl.app/library/typescript.svg",
+    "brand": "https://www.typescriptlang.org"
+  },
+  {
+    "id": "vscode",
+    "source": "SVGL",
+    "url": "https://svgl.app/library/vscode.svg",
+    "brand": "https://code.visualstudio.com/brand"
+  },
+  {
+    "id": "blender",
+    "source": "SVGL",
+    "url": "https://svgl.app/library/blender.svg",
+    "brand": "https://www.blender.org/about/logo/"
+  },
+  {
+    "id": "blender-animation",
+    "source": "SVGL",
+    "url": "https://svgl.app/library/blender.svg",
+    "brand": "https://www.blender.org/about/logo/"
+  },
+  {
+    "id": "unity-netcode",
+    "source": "SVGL",
+    "url": "https://svgl.app/library/unity_dark.svg",
+    "brand": "https://unity.com/"
+  },
+  {
+    "id": "unreal-replication",
+    "source": "SVGL",
+    "url": "https://svgl.app/library/unreal_engine_dark.svg",
+    "brand": "https://www.unrealengine.com/"
+  },
+  {
+    "id": "supabase",
+    "source": "SVGL",
+    "url": "https://svgl.app/library/supabase.svg",
+    "brand": "https://supabase.com/brand-assets"
+  },
+  {
+    "id": "git-lfs",
+    "source": "SVGL",
+    "url": "https://svgl.app/library/git.svg",
+    "brand": "https://git-scm.com/"
+  },
+  {
+    "id": "github",
+    "source": "SVGL",
+    "url": "https://svgl.app/library/github_dark.svg",
+    "brand": "https://brand.github.com/"
+  },
+  {
+    "id": "trello",
+    "source": "SVGL",
+    "url": "https://svgl.app/library/trello.svg",
+    "brand": "https://trello.com/brand"
+  },
+  {
+    "id": "notion",
+    "source": "SVGL",
+    "url": "https://svgl.app/library/notion.svg",
+    "brand": "https://notion.so/"
+  },
+  {
+    "id": "discord",
+    "source": "SVGL",
+    "url": "https://svgl.app/library/discord.svg",
+    "brand": "https://discord.com/branding"
+  },
+  {
+    "id": "unity-test",
+    "source": "SVGL",
+    "url": "https://svgl.app/library/unity_dark.svg",
+    "brand": "https://unity.com/"
+  },
+  {
+    "id": "unreal-automation",
+    "source": "SVGL",
+    "url": "https://svgl.app/library/unreal_engine_dark.svg",
+    "brand": "https://www.unrealengine.com/"
+  },
+  {
+    "id": "playwright",
+    "source": "SVGL",
+    "url": "https://svgl.app/library/playwright.svg",
+    "brand": "https://playwright.dev/"
+  },
+  {
+    "id": "github-actions",
+    "source": "SVGL",
+    "url": "https://svgl.app/library/github_dark.svg",
+    "brand": "https://brand.github.com/"
+  },
+  {
+    "id": "steam",
+    "source": "SVGL",
+    "url": "https://svgl.app/library/steam.svg",
+    "brand": "https://store.steampowered.com/"
+  },
+  {
+    "id": "google-play",
+    "source": "SVGL",
+    "url": "https://svgl.app/library/googleplay.svg",
+    "brand": "https://play.google.com"
+  },
+  {
+    "id": "app-store",
+    "source": "SVGL",
+    "url": "https://svgl.app/library/appstore.svg",
+    "brand": "https://www.apple.com/app-store/"
+  },
+  {
+    "id": "godot",
+    "source": "Godot official press kit",
+    "url": "https://godotengine.org/assets/press/icon_color.svg",
+    "brand": "https://godotengine.org/press/"
+  },
+  {
+    "id": "gdscript",
+    "source": "Godot official press kit",
+    "url": "https://godotengine.org/assets/press/icon_color.svg",
+    "brand": "https://godotengine.org/press/"
+  },
+  {
+    "id": "godot-multiplayer",
+    "source": "Godot official press kit",
+    "url": "https://godotengine.org/assets/press/icon_color.svg",
+    "brand": "https://godotengine.org/press/"
+  },
+  {
+    "id": "gut",
+    "source": "Godot official press kit",
+    "url": "https://godotengine.org/assets/press/icon_color.svg",
+    "brand": "https://godotengine.org/press/"
+  },
+  {
+    "id": "gamemaker",
+    "source": "GameMaker official website",
+    "url": "https://gamemaker.io/next/images/icons/safari-pinned-tab.svg",
+    "brand": "https://gamemaker.io/next/images/icons/safari-pinned-tab.svg"
+  },
+  {
+    "id": "gdevelop",
+    "source": "GDevelop official website",
+    "url": "https://gdevelop.io/favicons/safari-pinned-tab.svg",
+    "brand": "https://gdevelop.io/favicons/safari-pinned-tab.svg"
+  },
+  {
+    "id": "itch",
+    "source": "itch.io official website",
+    "url": "https://static.itch.io/images/logo-black-new.svg",
+    "brand": "https://static.itch.io/images/logo-black-new.svg"
+  },
+  {
+    "id": "audacity",
+    "source": "Audacity official website",
+    "url": "https://www.audacityteam.org/favicon.svg",
+    "brand": "https://www.audacityteam.org/favicon.svg"
+  },
+  {
+    "id": "photoshop",
+    "source": "SVGL",
+    "url": "https://svgl.app/library/photoshop.svg",
+    "brand": "https://www.adobe.com/legal/permissions.html"
+  },
+  {
+    "id": "substance",
+    "source": "SVGL",
+    "url": "https://svgl.app/library/substance-3d-painter.svg",
+    "brand": "https://www.adobe.com/legal/permissions.html"
+  }
+]
