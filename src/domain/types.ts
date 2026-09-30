@@ -33,6 +33,8 @@ export type Tool = {
   id: string;
   name: string;
   category: CategoryId;
+  kind?: "engine" | "framework" | "library";
+  mobileTargets?: ("android" | "ios")[];
   description: string;
   url: string;
   cost: string;

@@ -1331,3 +1331,13 @@ h1 span {
     scroll-margin-top: 16px;
   }
 }
+
+.foundation-kind,
+.detail-kind {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 8px;
+  color: #b6c9a5;
+  margin-bottom: 8px;
+}

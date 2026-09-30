@@ -34,5 +34,18 @@
   "events": "gdevelop.svg",
   "blueprints": "unreal-replication.svg",
   "photoshop": "photoshop.svg",
-  "substance": "substance.svg"
+  "substance": "substance.svg",
+  "rust": "rust.svg",
+  "lua": "lua.svg",
+  "c": "c.svg",
+  "cargo": "cargo.svg",
+  "bevy": "bevy.svg",
+  "defold": "defold.svg",
+  "ldtk": "ldtk.svg",
+  "catch2": "catch2.svg",
+  "renderdoc": "renderdoc.svg",
+  "dotnet-test": "csharp.svg",
+  "odin": "odin.svg",
+  "sfml": "sfml.svg",
+  "odin-test": "odin.svg"
 }

@@ -4,7 +4,7 @@ import type { Category, Tool } from "./types";
 export const categories: Category[] = [
   {
     id: "engine",
-    name: "Game engine",
+    name: "Engines & frameworks",
     label: "01",
     description: "The foundation of your next world.",
   },
@@ -66,7 +66,9 @@ export const categories: Category[] = [
 ];
 
 const categoryIds = new Set(categories.map((category) => category.id));
-const engineIds = new Set(["godot", "unity", "unreal", "gamemaker", "gdevelop", "phaser"]);
+const engineIds = new Set(
+  catalog.filter((tool) => tool.category === "engine").map((tool) => tool.id),
+);
 
 function validateTool(tool: (typeof catalog)[number]): Tool {
   const category = categories.find((entry) => entry.id === tool.category)?.id;
@@ -96,8 +98,30 @@ function validateTool(tool: (typeof catalog)[number]): Tool {
       platforms.push(platform);
     }
   }
-  const { dimensions: rawDimensions, platforms: rawPlatforms, ...rest } = tool;
+  const {
+    dimensions: rawDimensions,
+    platforms: rawPlatforms,
+    kind,
+    mobileTargets: rawMobileTargets,
+    ...rest
+  } = tool;
   const validated: Tool = { ...rest, category };
+  if (kind) {
+    if (kind !== "engine" && kind !== "framework" && kind !== "library") {
+      throw new Error(`Invalid foundation kind for ${tool.id}`);
+    }
+    validated.kind = kind;
+  }
+  if (rawMobileTargets) {
+    const mobileTargets: NonNullable<Tool["mobileTargets"]> = [];
+    for (const target of rawMobileTargets) {
+      if (target !== "android" && target !== "ios") {
+        throw new Error(`Invalid mobile target for ${tool.id}`);
+      }
+      mobileTargets.push(target);
+    }
+    validated.mobileTargets = mobileTargets;
+  }
   if (rawDimensions) {
     validated.dimensions = dimensions;
   }

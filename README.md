@@ -36,15 +36,15 @@ The supplied Biome 2.5.10 configuration is preserved, including its overrides an
 
 ## Features
 
-- 50 tools across 11 production categories, with search, free-option filtering, and vendor links.
-- One engine per stack; other categories allow multiple tools and incomplete stacks.
+- 71 tools across 11 production categories, with search, free-option filtering, and vendor links.
+- One primary engine, framework, or library per stack; other categories allow multiple tools and incomplete stacks.
 - Eight-step guided recommendations with explanations, alternatives, and replacement confirmation.
 - Compatibility notices for engine integrations, exports, stores, and console access.
 - Device persistence and nuqs query parameters for shareable configuration.
 - Project-prompt copying and standalone PNG/SVG diagram downloads.
 - Keyboard support, responsive layout, reduced-motion support, and explicit failure feedback.
 
-The catalog describes starting points, not an integration guarantee. GDevelop is cataloged for its established 2D workflow; Phaser lists direct browser output only. Engine versions, SDK access, commercial terms, online architecture, and service capacity must be checked for a real project. Free tooling does not imply free hosting or publishing.
+The catalog describes starting points, not an integration guarantee. Foundations are labeled as engines, frameworks, or libraries. Bevy/Rust, SFML/C++, raylib/C or Odin, SDL3, LÖVE/Lua, MonoGame/C#, and Defold/Lua complement the editor-driven workflows. Code-first suggestions include appropriate build and testing tools, separate animation authoring where needed, and optional tile-map tooling. raylib’s verified mobile route is Android; iOS stores are not automatically recommended for it. GDevelop is cataloged for its established 2D workflow; Phaser lists direct browser output only. Engine versions, SDK access, commercial terms, online architecture, and service capacity must be checked for a real project. Free tooling does not imply free hosting or publishing.
 
 ## Architecture and maintenance
 
